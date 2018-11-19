@@ -9,16 +9,23 @@ namespace Task2.TextModel.CompositeConstructions
 {
     public class Sentence : BaseTextComponent
     {
-       public  IList<BaseSentenceComponent> SentenceComponents { get; private set; }
-       public IEnumerable<BaseSentenceComponent> SentenceComponent { get { return SentenceComponents.AsEnumerable(); } }
+       private readonly IList<BaseSentenceComponent> _components = new List<BaseSentenceComponent>();
+       public IEnumerable<BaseSentenceComponent>  SentenceComponents => _components.AsEnumerable();
+       public int WordsCount { get; private set; }
 
-        public Sentence(IList<BaseSentenceComponent> sentenceComponent)
+        public Sentence(IList<BaseSentenceComponent> sentenceComponents)
         {
-            SentenceComponents = sentenceComponent;
+            foreach (var sentenceComponent in sentenceComponents)
+            {
+                Add(sentenceComponent);
+            }
         }
-        public void Add(BaseSentenceComponent _baseSentenceComponent)
+
+        public void Add(BaseSentenceComponent baseSentenceComponent)
         {
-            SentenceComponents.Add(_baseSentenceComponent); 
+            if (baseSentenceComponent is Word)
+            { WordsCount++; }
+            _components.Add(baseSentenceComponent);
         }
     
     }

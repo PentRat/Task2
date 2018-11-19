@@ -10,11 +10,14 @@ namespace Task2.Analyser
 {
     public class Analyzer
     {
-        //public IEnumerable<Text> SortByWordsCount()
-        //{
-        //    return from x in Text.TextComponents
-        //    orderby Text.TextComponents.Count<Word>
-        //    select x;
-        //}
+        public List<Sentence> SortByWordsCount(Text text)
+        {
+            var orderedSentences = text.TextComponents
+            .Select(x => x as Sentence)
+            .Where(x => x != null)
+            .OrderBy(x => x.WordsCount)
+            .ToList();
+            return orderedSentences;
+        }
     }
 }

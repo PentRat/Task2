@@ -8,11 +8,13 @@ namespace Task2.TextModel.CompositeConstructions
 {
     public class Text
     {
-        public static IList<BaseTextComponent> TextComponents { get; set; }
-
-        public Text()
+        private readonly IList<BaseTextComponent> _components = new List<BaseTextComponent>();
+        public IEnumerable<BaseTextComponent> TextComponents => _components.AsEnumerable();
+        
+        public void Add(BaseTextComponent baseTextComponent)
         {
-            TextComponents = new List<BaseTextComponent>();
+            _components.Add(baseTextComponent);
         }
+
     }
 }
