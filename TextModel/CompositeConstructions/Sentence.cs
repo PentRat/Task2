@@ -9,11 +9,12 @@ namespace Task2.TextModel.CompositeConstructions
 {
     public class Sentence : BaseTextComponent
     {
-        public static IList<BaseSentenceComponent> BasicSentenceComponents { get; set; }
+       public  IList<BaseSentenceComponent> SentenceComponents { get; set; }
 
-        public Sentence()
+        public Sentence(IList<BaseSentenceComponent> sentenceComponent)
         {
-            BasicSentenceComponents = new List<BaseSentenceComponent>();
+            SentenceComponents = sentenceComponent;
         }
+        
     }
 }

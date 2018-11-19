@@ -17,8 +17,8 @@ namespace Task2.Parser
         public IList<BaseSentenceComponent> SentenceBuffer { get; private set; }
 
         private bool PunctuationInSetnenceSetted = false;
+
         private bool PunctuationSentenceFinisherSetted = false;
-        private bool Separator = false;
 
         public TextShaper()
         {
@@ -35,6 +35,18 @@ namespace Task2.Parser
             Shapes.Add(Convert.ToChar("/t"), Separate);
         }
 
+        public void Parse(char currentSymbol)
+        {
+            if (Shapes.ContainsKey(currentSymbol) == true)
+            {
+                Shape Action = Shapes[currentSymbol];
+                Action(currentSymbol);
+            }
+            else
+            {
+                CharBuffer.Add(currentSymbol);
+            }
+        }
         public delegate void Shape(char currentSymbol);
         
         public void WordFinish(char currentSymbol)
@@ -61,7 +73,8 @@ namespace Task2.Parser
             {
                 PunctuationMark punctuationMark = new PunctuationMark(CharBuffer);
                 CharBuffer.Clear();
-                CharBuffer.Add(currentSymbol);
+                InSentenseSeparator separator = new InSentenseSeparator(currentSymbol);
+                SentenceBuffer.Add(separator);
             }
 
             if (PunctuationSentenceFinisherSetted == true)
@@ -70,9 +83,10 @@ namespace Task2.Parser
                 CharBuffer.Clear();
                 PunctuationSentenceFinisherSetted = false;
                 Sentence sentence = new Sentence(SentenceBuffer);
-                Text.TextSentences.Add(sentence);
+                Text.TextComponents.Add(sentence);
                 SentenceBuffer.Clear();
-                CharBuffer.Add(currentSymbol);
+                SentenseSeparator separator = new SentenseSeparator(currentSymbol);
+                Text.TextComponents.Add(separator);
             }
 
 

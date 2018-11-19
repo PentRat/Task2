@@ -8,7 +8,7 @@ namespace Task2.TextModel.SimpleConstructions
 {
     public class Word : BaseSentenceComponent
     {
-        public static IList<char> Letters { get; set;}
+        public IList<char> Letters { get; set;}
 
         public Word(IList<char> letters)
         {

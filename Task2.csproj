@@ -43,13 +43,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Analyser\Analyser.cs" />
+    <Compile Include="Parser\Input.cs" />
     <Compile Include="Parser\TextShaper.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TextModel\CompositeConstructions\BaseTextComponent.cs" />
     <Compile Include="TextModel\CompositeConstructions\Sentence.cs" />
+    <Compile Include="TextModel\CompositeConstructions\SentenseSeparator.cs" />
     <Compile Include="TextModel\CompositeConstructions\Text.cs" />
     <Compile Include="TextModel\SimpleConstructions\BaseSentenceComponent.cs" />
+    <Compile Include="TextModel\SimpleConstructions\InSentenseSeparator.cs" />
     <Compile Include="TextModel\SimpleConstructions\PunctuationMark.cs" />
     <Compile Include="TextModel\SimpleConstructions\Word.cs" />
   </ItemGroup>

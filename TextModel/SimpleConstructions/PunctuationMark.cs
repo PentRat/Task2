@@ -8,7 +8,7 @@ namespace Task2.TextModel.SimpleConstructions
 {
     public class PunctuationMark : BaseSentenceComponent
     {
-        public static IList<char> SymbolCombination { get; set; }
+        public IList<char> SymbolCombination { get; set; }
 
         public PunctuationMark(IList<char> symbolCombination)
         {

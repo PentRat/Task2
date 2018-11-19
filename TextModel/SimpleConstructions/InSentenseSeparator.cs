@@ -6,10 +6,14 @@ using System.Threading.Tasks;
 
 namespace Task2.TextModel.SimpleConstructions
 {
-    public class InSentenseSerarator
+    public class InSentenseSeparator : BaseSentenceComponent
     {
-        public char Separator { get; set; }
-        
-        
+        public char Separator { get; private set; }
+
+        public InSentenseSeparator(char separator)
+        {
+            Separator = separator;
+        }
+
     }
 }
