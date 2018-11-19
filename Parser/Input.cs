@@ -7,7 +7,7 @@ using System.IO;
 
 namespace Task2.Parser
 {
-    public class Input : IDisposable
+    public class Input 
     {
         public string InputData;
 
@@ -32,10 +32,7 @@ namespace Task2.Parser
             }
         }
 
-        public void Dispose()
-        {
-            Dispose();
-        }
+    
 
 
     }

@@ -43,7 +43,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Analyser\Analyser.cs" />
+    <Compile Include="Analyser\Analyzer.cs" />
     <Compile Include="Parser\Input.cs" />
     <Compile Include="Parser\TextShaper.cs" />
     <Compile Include="Program.cs" />

@@ -8,7 +8,7 @@ using Task2.TextModel.SimpleConstructions;
 
 namespace Task2.Analyser
 {
-    public class Analyser
+    public class Analyzer
     {
         //public IEnumerable<Text> SortByWordsCount()
         //{
