@@ -13,7 +13,7 @@ namespace Task2.TextModel.CompositeConstructions
        public IEnumerable<BaseSentenceComponent>  SentenceComponents => _components.AsEnumerable();
        public int WordsCount { get; private set; }
 
-        public Sentence(IList<BaseSentenceComponent> sentenceComponents)
+        public Sentence(List<BaseSentenceComponent> sentenceComponents)
         {
             foreach (var sentenceComponent in sentenceComponents)
             {
@@ -27,6 +27,6 @@ namespace Task2.TextModel.CompositeConstructions
             { WordsCount++; }
             _components.Add(baseSentenceComponent);
         }
-    
+
     }
 }

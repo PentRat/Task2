@@ -14,7 +14,7 @@ namespace Task2.Parser
 
         public IList<char> CharBuffer { get; private set; }
 
-        public IList<BaseSentenceComponent> SentenceBuffer { get; private set; }
+        public List<BaseSentenceComponent> SentenceBuffer { get; private set; }
 
         public Text ResultTextModel = new Text();
 
@@ -91,7 +91,6 @@ namespace Task2.Parser
                 SentenseSeparator separator = new SentenseSeparator(currentSymbol);
                 ResultTextModel.Add(sentence);
             }
-
 
         }
         
